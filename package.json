@@ -1,0 +1,28 @@
+{
+  "name": "project",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lara-Jamal/Smart-Fund.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lara-Jamal/Smart-Fund/issues"
+  },
+  "homepage": "https://github.com/Lara-Jamal/Smart-Fund#readme",
+  "description": "",
+  "dependencies": {
+    "express": "^5.1.0",
+    "react-scripts": "^5.0.1"
+  }
+}
