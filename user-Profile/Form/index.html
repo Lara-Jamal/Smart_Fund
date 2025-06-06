@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fund Request Form</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body class="bg-gray-50 min-h-screen">
+    <div class="container mx-auto px-4 py-8 max-w-2xl">
+      <div class="bg-white rounded-lg shadow-lg p-8">
+        <h1
+          class="text-3xl font-bold text-gray-800 mb-2 text-center text-green-600"
+        >
+          Fund Request Form
+        </h1>
+        <p class="text-gray-500 text-center mb-8">
+          Complete the form below to submit your fund request
+        </p>
+
+        <form id="fundForm" class="space-y-8">
+          <!-- Personal Information Section -->
+          <div class="bg-gray-50 p-6 rounded-lg space-y-6">
+            <div class="border-b border-gray-200 pb-2">
+              <h2 class="text-xl font-semibold text-gray-800">
+                Personal Information
+              </h2>
+              <p class="text-gray-500 text-sm">
+                Please provide your basic personal details
+              </p>
+            </div>
+
+            <!-- Full Name -->
+            <div class="space-y-2">
+              <label
+                for="fullName"
+                class="block text-sm font-medium text-gray-700"
+              >
+                Full Name <span class="text-red-500">*</span>
+              </label>
+              <input
+                type="text"
+                id="fullName"
+                name="fullName"
+                required
+                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                placeholder="Enter your full name"
+              />
+              <div class="error-message text-red-500 text-sm hidden"></div>
+            </div>
+
+            <!-- Age -->
+            <div class="space-y-2">
+              <label for="age" class="block text-sm font-medium text-gray-700">
+                Age <span class="text-red-500">*</span>
+              </label>
+              <input
+                type="number"
+                id="age"
+                name="age"
+                required
+                min="18"
+                max="120"
+                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                placeholder="Enter your age"
+              />
+              <div class="error-message text-red-500 text-sm hidden"></div>
+            </div>
+
+            <!-- Gender -->
+            <div class="space-y-2">
+              <label class="block text-sm font-medium text-gray-700">
+                Gender <span class="text-red-500">*</span>
+              </label>
+              <div class="grid grid-cols-2 gap-4">
+                <div class="relative">
+                  <input
+                    type="radio"
+                    id="male"
+                    name="gender"
+                    value="male"
+                    required
+                    class="peer hidden"
+                  />
+                  <label
+                    for="male"
+                    class="flex items-center justify-center p-3 border-2 border-gray-200 rounded-lg cursor-pointer hover:bg-gray-50 peer-checked:border-green-500 peer-checked:bg-green-50 transition-all duration-200"
+                  >
+                    <i class="fas fa-mars text-xl text-green-600 mr-2"></i>
+                    <span class="font-medium text-gray-700">Male</span>
+                  </label>
+                </div>
+                <div class="relative">
+                  <input
+                    type="radio"
+                    id="female"
+                    name="gender"
+                    value="female"
+                    required
+                    class="peer hidden"
+                  />
+                  <label
+                    for="female"
+                    class="flex items-center justify-center p-3 border-2 border-gray-200 rounded-lg cursor-pointer hover:bg-gray-50 peer-checked:border-green-500 peer-checked:bg-green-50 transition-all duration-200"
+                  >
+                    <i class="fas fa-venus text-xl text-green-600 mr-2"></i>
+                    <span class="font-medium text-gray-700">Female</span>
+                  </label>
+                </div>
+              </div>
+              <div class="error-message text-red-500 text-sm hidden"></div>
+            </div>
+
+            <!-- Relationship Status -->
+            <div class="space-y-2">
+              <label
+                for="relationship"
+                class="block text-sm font-medium text-gray-700"
+              >
+                Relationship Status <span class="text-red-500">*</span>
+              </label>
+              <select
+                id="relationship"
+                name="relationship"
+                required
+                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500 focus:border-green-500"
+              >
+                <option value="">Select your relationship status</option>
+                <option value="single">Single</option>
+                <option value="married">Married</option>
+                <option value="divorced">Divorced</option>
+                <option value="widowed">Widowed</option>
+                <option value="separated">Separated</option>
+                <option value="other">Other</option>
+              </select>
+              <div class="error-message text-red-500 text-sm hidden"></div>
+            </div>
+          </div>
+
+          <!-- Employment & Education Section -->
+          <div class="bg-gray-50 p-6 rounded-lg space-y-6">
+            <div class="border-b border-gray-200 pb-2">
+              <h2 class="text-xl font-semibold text-gray-800">
+                Employment & Education
+              </h2>
+              <p class="text-gray-500 text-sm">
+                Please provide your employment and educational background
+              </p>
+            </div>
+
+            <!-- Current Employment -->
+            <div class="space-y-2">
+              <label
+                for="employment"
+                class="block text-sm font-medium text-gray-700"
+              >
+                Current Employment Status <span class="text-red-500">*</span>
+              </label>
+              <select
+                id="employment"
+                name="employment"
+                required
+                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500 focus:border-green-500"
+              >
+                <option value="">Select your employment status</option>
+                <option value="employed">Employed</option>
+                <option value="self_employed">Self-Employed</option>
+                <option value="unemployed">Unemployed</option>
+                <option value="student">Student</option>
+                <option value="retired">Retired</option>
+                <option value="other">Other</option>
+              </select>
+              <div class="error-message text-red-500 text-sm hidden"></div>
+            </div>
+
+            <!-- Monthly Income -->
+            <div class="space-y-2">
+              <label
+                for="income"
+                class="block text-sm font-medium text-gray-700"
+              >
+                Monthly Income <span class="text-red-500">*</span>
+              </label>
+              <div class="relative">
+                <span class="absolute left-4 top-2 text-gray-500">$</span>
+                <input
+                  type="number"
+                  id="income"
+                  name="income"
+                  required
+                  min="0"
+                  class="w-full pl-8 pr-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                  placeholder="Enter your monthly income"
+                />
+              </div>
+              <div class="error-message text-red-500 text-sm hidden"></div>
+            </div>
+
+            <!-- Education Level -->
+            <div class="space-y-2">
+              <label
+                for="education"
+                class="block text-sm font-medium text-gray-700"
+              >
+                Education Level <span class="text-red-500">*</span>
+              </label>
+              <select
+                id="education"
+                name="education"
+                required
+                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500 focus:border-green-500"
+              >
+                <option value="">Select your education level</option>
+                <option value="high_school">High School</option>
+                <option value="associate">Associate Degree</option>
+                <option value="bachelor">Bachelor's Degree</option>
+                <option value="master">Master's Degree</option>
+                <option value="doctorate">Doctorate</option>
+                <option value="other">Other</option>
+              </select>
+              <div class="error-message text-red-500 text-sm hidden"></div>
+            </div>
+          </div>
+
+          <!-- Contact Information Section -->
+          <div class="bg-gray-50 p-6 rounded-lg space-y-6">
+            <div class="border-b border-gray-200 pb-2">
+              <h2 class="text-xl font-semibold text-gray-800">
+                Contact Information
+              </h2>
+              <p class="text-gray-500 text-sm">
+                Please provide your contact details
+              </p>
+            </div>
+
+            <!-- Email Address -->
+            <div class="space-y-2">
+              <label
+                for="email"
+                class="block text-sm font-medium text-gray-700"
+              >
+                Email Address <span class="text-red-500">*</span>
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                placeholder="Enter your email address"
+              />
+              <div class="error-message text-red-500 text-sm hidden"></div>
+            </div>
+
+            <!-- Phone Number -->
+            <div class="space-y-2">
+              <label
+                for="phone"
+                class="block text-sm font-medium text-gray-700"
+              >
+                Phone Number
+              </label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                placeholder="Enter your phone number"
+              />
+              <div class="error-message text-red-500 text-sm hidden"></div>
+            </div>
+          </div>
+
+          <!-- Fund Details Section -->
+          <div class="bg-gray-50 p-6 rounded-lg space-y-6">
+            <div class="border-b border-gray-200 pb-2">
+              <h2 class="text-xl font-semibold text-gray-800">Fund Details</h2>
+              <p class="text-gray-500 text-sm">
+                Please provide details about your fund request
+              </p>
+            </div>
+
+            <!-- Fund Type -->
+            <div class="space-y-4">
+              <label class="block text-sm font-medium text-gray-700">
+                Fund Type <span class="text-red-500">*</span>
+              </label>
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <!-- Personal Fund -->
+                <div class="relative">
+                  <input
+                    type="radio"
+                    id="personal"
+                    name="fundType"
+                    value="personal"
+                    required
+                    class="peer hidden"
+                  />
+                  <label
+                    for="personal"
+                    class="flex flex-col items-center justify-center p-4 border-2 border-gray-200 rounded-lg cursor-pointer hover:bg-gray-50 peer-checked:border-green-500 peer-checked:bg-green-50 transition-all duration-200"
+                  >
+                    <i
+                      class="fas fa-user-circle text-3xl text-green-600 mb-2"
+                    ></i>
+                    <span class="font-medium text-gray-700">Personal Fund</span>
+                    <span class="text-sm text-gray-500 text-center mt-1"
+                      >For personal needs such as education, housing, or
+                      emergency expenses.</span
+                    >
+                  </label>
+                </div>
+
+                <!-- Medical Fund -->
+                <div class="relative">
+                  <input
+                    type="radio"
+                    id="medical"
+                    name="fundType"
+                    value="medical"
+                    required
+                    class="peer hidden"
+                  />
+                  <label
+                    for="medical"
+                    class="flex flex-col items-center justify-center p-4 border-2 border-gray-200 rounded-lg cursor-pointer hover:bg-gray-50 peer-checked:border-green-500 peer-checked:bg-green-50 transition-all duration-200"
+                  >
+                    <i
+                      class="fas fa-heartbeat text-3xl text-green-600 mb-2"
+                    ></i>
+                    <span class="font-medium text-gray-700">Medical Fund</span>
+                    <span class="text-sm text-gray-500 text-center mt-1"
+                      >For medical expenses, treatments, or healthcare-related
+                      needs.</span
+                    >
+                  </label>
+                </div>
+
+                <!-- Micro Project -->
+                <div class="relative">
+                  <input
+                    type="radio"
+                    id="microProject"
+                    name="fundType"
+                    value="microProject"
+                    required
+                    class="peer hidden"
+                  />
+                  <label
+                    for="microProject"
+                    class="flex flex-col items-center justify-center p-4 border-2 border-gray-200 rounded-lg cursor-pointer hover:bg-gray-50 peer-checked:border-green-500 peer-checked:bg-green-50 transition-all duration-200"
+                  >
+                    <i
+                      class="fas fa-lightbulb text-3xl text-green-600 mb-2"
+                    ></i>
+                    <span class="font-medium text-gray-700">Micro Project</span>
+                    <span class="text-sm text-gray-500 text-center mt-1"
+                      >For small business ventures, community projects, or
+                      entrepreneurial initiatives.</span
+                    >
+                  </label>
+                </div>
+              </div>
+              <div class="error-message text-red-500 text-sm hidden"></div>
+            </div>
+
+            <!-- Fund Amount -->
+            <div class="space-y-2">
+              <label
+                for="amount"
+                class="block text-sm font-medium text-gray-700"
+              >
+                Fund Amount Requested <span class="text-red-500">*</span>
+              </label>
+              <div class="relative">
+                <span class="absolute left-4 top-2 text-gray-500">$</span>
+                <input
+                  type="number"
+                  id="amount"
+                  name="amount"
+                  required
+                  min="100"
+                  class="w-full pl-8 pr-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                  placeholder="Enter amount (minimum $100)"
+                />
+              </div>
+              <div class="error-message text-red-500 text-sm hidden"></div>
+            </div>
+
+            <!-- Purpose -->
+            <div class="space-y-2">
+              <label
+                for="purpose"
+                class="block text-sm font-medium text-gray-700"
+              >
+                Purpose of the Fund <span class="text-red-500">*</span>
+              </label>
+              <textarea
+                id="purpose"
+                name="purpose"
+                required
+                rows="4"
+                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                placeholder="Please describe why you are requesting this fund..."
+              ></textarea>
+              <div class="error-message text-red-500 text-sm hidden"></div>
+            </div>
+          </div>
+
+          <!-- Verification Section -->
+          <div class="bg-gray-50 p-6 rounded-lg space-y-6">
+            <div class="border-b border-gray-200 pb-2">
+              <h2 class="text-xl font-semibold text-gray-800">Verification</h2>
+              <p class="text-gray-500 text-sm">
+                Please upload your identification document for verification
+              </p>
+            </div>
+
+            <!-- ID Upload -->
+            <div class="space-y-2">
+              <label class="block text-sm font-medium text-gray-700">
+                Upload ID Document <span class="text-red-500">*</span>
+              </label>
+              <div
+                class="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md"
+              >
+                <div class="space-y-1 text-center">
+                  <i class="fas fa-id-card text-4xl text-gray-400 mb-2"></i>
+                  <div class="flex text-sm text-gray-600">
+                    <label
+                      for="idDocument"
+                      class="relative cursor-pointer bg-white rounded-md font-medium text-green-600 hover:text-green-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-green-500"
+                    >
+                      <span>Upload a file</span>
+                      <input
+                        id="idDocument"
+                        name="idDocument"
+                        type="file"
+                        required
+                        class="sr-only"
+                        accept=".pdf,.jpg,.jpeg,.png"
+                        onchange="updateFileName(this)"
+                      />
+                    </label>
+                    <p class="pl-1">or drag and drop</p>
+                  </div>
+                  <p class="text-xs text-gray-500">PDF, JPG, PNG up to 10MB</p>
+                  <p
+                    id="selectedFileName"
+                    class="text-sm text-gray-500 mt-2"
+                  ></p>
+                </div>
+              </div>
+              <div class="error-message text-red-500 text-sm hidden"></div>
+            </div>
+          </div>
+
+          <!-- Submit Button -->
+          <button
+            type="submit"
+            class="w-full bg-green-600 text-white py-3 px-6 rounded-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 transition-colors duration-200"
+          >
+            Submit Request
+          </button>
+        </form>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

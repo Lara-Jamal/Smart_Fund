@@ -1,0 +1,326 @@
+/* Custom Scrollbar Styles */
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,
+*::-webkit-scrollbar {
+  width: 12px !important;
+}
+
+html::-webkit-scrollbar-track,
+body::-webkit-scrollbar-track,
+*::-webkit-scrollbar-track {
+  background: #f1f1f1 !important;
+  border-radius: 6px !important;
+}
+
+html::-webkit-scrollbar-thumb,
+body::-webkit-scrollbar-thumb,
+*::-webkit-scrollbar-thumb {
+  background: #198754 !important;
+  border-radius: 6px !important;
+  border: 2px solid #f1f1f1 !important;
+}
+
+html::-webkit-scrollbar-thumb:hover,
+body::-webkit-scrollbar-thumb:hover,
+*::-webkit-scrollbar-thumb:hover {
+  background: #157347 !important;
+}
+
+/* Firefox scrollbar */
+html,
+body,
+* {
+  scrollbar-width: thin !important;
+  scrollbar-color: #198754 #f1f1f1 !important;
+}
+
+/* Override primary color */
+:root {
+  --bs-primary: #198754 !important;
+  --bs-primary-rgb: 25, 135, 84 !important;
+}
+
+/* Button overrides */
+.btn-primary {
+  background-color: #198754 !important;
+  border-color: #198754 !important;
+}
+
+/* Text color overrides */
+.text-primary,
+p.text-primary,
+span.text-primary,
+a.text-primary,
+.text-primary-soft,
+p.text-primary-soft,
+span.text-primary-soft,
+a.text-primary-soft {
+  color: #198754 !important;
+}
+
+/* Background color overrides */
+.bg-primary,
+.bg-primary-soft {
+  background-color: #198754 !important;
+}
+
+/* Border color overrides */
+.border-primary,
+.border-primary-soft {
+  border-color: #198754 !important;
+}
+
+/* Link color overrides */
+/* a:not(.btn):not(.nav-link) {
+  color: #198754 !important;
+} */
+
+/* Navigation pills overrides */
+.nav-pills .nav-link {
+  color: #198754 !important;
+  transition: all 0.3s ease !important;
+}
+
+.nav-pills .nav-link:hover,
+.nav-pills .nav-link:focus,
+.nav-pills .nav-link.active {
+  background-color: #198754 !important;
+  color: white !important;
+}
+
+/* Remove hover effects from nav links */
+.nav-link,
+.navbar-nav .nav-link,
+.navbar .nav-link,
+.nav-pills .nav-link,
+.nav-link.show,
+.nav-link.active,
+.nav-link.show.active {
+  color: #198754 !important;
+  background-color: transparent !important;
+  opacity: 1 !important;
+  text-decoration: none !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  transition: all 0.3s ease !important;
+}
+
+.nav-link:hover,
+.navbar-nav .nav-link:hover,
+.navbar .nav-link:hover,
+.nav-pills .nav-link:hover,
+.nav-link.show:hover,
+.nav-link.active:hover,
+.nav-link.show.active:hover {
+  color: white !important;
+  background-color: #198754 !important;
+  opacity: 1 !important;
+  text-decoration: none !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Remove any border or line from nav links */
+.nav-link::before,
+.nav-link::after,
+.navbar-nav .nav-link::before,
+.navbar-nav .nav-link::after,
+.navbar .nav-link::before,
+.navbar .nav-link::after,
+.nav-pills .nav-link::before,
+.nav-pills .nav-link::after {
+  display: none !important;
+  content: none !important;
+}
+
+/* Header and navigation overrides */
+.nav-link,
+.navbar-nav .nav-link,
+.navbar .nav-link {
+  color: #198754 !important;
+}
+
+.nav-link.active,
+.navbar-nav .nav-link.active,
+.navbar .nav-link.active {
+  color: #198754 !important;
+  background-color: rgba(25, 135, 84, 0.1) !important;
+}
+
+/* Header background overrides with pattern */
+.iq-banner,
+.iq-navbar-header {
+  background-color: #198754 !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+@keyframes patternMove {
+  0% {
+    background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+  }
+  100% {
+    background-position: 40px 40px, 40px 50px, 50px 30px, 30px 40px;
+  }
+}
+
+.iq-header-img {
+  background-color: transparent !important;
+}
+
+.iq-header-img img {
+  opacity: 0.05 !important;
+  mix-blend-mode: overlay !important;
+}
+
+/* Hide settings button and dropdown */
+.dropdown-toggle[data-bs-toggle="dropdown"],
+.dropdown-menu {
+  display: none !important;
+}
+
+/* Disable animations */
+.animated-scaleX,
+.animated-scale,
+.animated-rotate {
+  animation: none !important;
+  transform: none !important;
+}
+
+/* Override any other primary color instances */
+[class*="text-primary"],
+[class*="bg-primary"],
+[class*="border-primary"] {
+  color: #198754 !important;
+  background-color: #198754 !important;
+  border-color: #198754 !important;
+}
+
+/* Override any text elements that might be using the primary color */
+p,
+span,
+div,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: inherit;
+}
+
+/* Override any specific theme colors */
+.theme-color-default-img,
+.theme-color-purple-img,
+.theme-color-blue-img,
+.theme-color-green-img,
+.theme-color-yellow-img,
+.theme-color-pink-img {
+  filter: none !important;
+}
+
+/* Hide News section */
+.card .card-header .card-title:first-child,
+/* Hide Gallery section */
+.card .card-header .card-title:first-child + .card-body,
+/* Hide Twitter Feeds section */
+.card .card-header .card-title:first-child + .card-body + .card-body,
+/* Hide Stories section */
+.card .card-header .card-title:first-child + .card-body + .card-body + .card-body,
+/* Hide Suggestions section */
+.card .card-header .card-title:first-child + .card-body + .card-body + .card-body + .card-body {
+  display: none !important;
+}
+
+/* Hide News, Gallery, Twitter Feeds, Stories, and Suggestions sections */
+.col-lg-3 .card:nth-child(1),
+.col-lg-3 .card:nth-child(2),
+.col-lg-3 .card:nth-child(3),
+.col-lg-3 .card:nth-child(4),
+.col-lg-3 .card:nth-child(5) {
+  display: none !important;
+}
+
+/* Make profile content wider and centered */
+.col-lg-6 {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.profile-content.tab-content {
+  width: 100% !important;
+}
+
+.profile-content.tab-content .card {
+  width: 100% !important;
+  margin: 0 !important;
+}
+
+/* Hide the right column */
+.col-lg-3:last-child {
+  display: none !important;
+}
+
+/* Hide loader completely */
+#loading,
+.loader,
+.loader.simple-loader,
+.loader-body {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+
+/* Style nav links */
+.nav-link {
+  background-color: transparent !important;
+  color: inherit !important;
+  transition: all 0.3s ease !important;
+  border-radius: 4px !important;
+  padding: 8px 16px !important;
+}
+
+/* Ensure text color changes to white on hover */
+.nav-link:hover *,
+.nav-link:focus *,
+.nav-link.active * {
+  color: white !important;
+}
+
+/* Hide text-primary paragraphs */
+.media-support-info .text-primary,
+.media-support-info p.text-primary {
+  display: none !important;
+}
+
+/* Fund box text colors */
+.card.bg-primary .card-title,
+.card.bg-success .card-title,
+.card.bg-warning .card-title,
+.card.bg-primary h2,
+.card.bg-success h2,
+.card.bg-warning h2 {
+  color: white !important;
+}
+
+.card.bg-primary,
+.card.bg-success,
+.card.bg-warning {
+  color: white !important;
+}
+
+/* Footer Link Styles */
+.footer .left-panel a {
+    color: #198754 !important;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer .left-panel a:hover {
+    color: #146c43 !important;
+    text-decoration: underline;
+}
