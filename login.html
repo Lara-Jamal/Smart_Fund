@@ -223,7 +223,7 @@
 
     <div class="container" id="container">
       <div class="form-container sign-up-container">
-        <form action="#">
+        <form action="#" id="signUpForm">
           <h1>Create Account</h1>
           <span style="margin-bottom: 15px"
             >or use your email for registration</span
@@ -231,7 +231,13 @@
           <input type="text" placeholder="Name" />
           <input type="email" placeholder="Email" />
           <input type="password" placeholder="Password" />
-          <button>Sign Up</button>
+          <input
+            type="text"
+            placeholder="Verification Code"
+            id="verificationCode"
+            style="display: none"
+          />
+          <button type="button" id="signUpSubmit">Sign Up</button>
         </form>
       </div>
       <div class="form-container sign-in-container">
@@ -278,6 +284,25 @@
 
     signInButton.addEventListener("click", () => {
       container.classList.remove("right-panel-active");
+    });
+
+    // --- New code for verification field ---
+    const signUpForm = document.getElementById("signUpForm");
+    const signUpSubmit = document.getElementById("signUpSubmit");
+    const verificationCode = document.getElementById("verificationCode");
+    let verificationStep = false;
+
+    signUpSubmit.addEventListener("click", function (e) {
+      if (!verificationStep) {
+        verificationCode.style.display = "block";
+        signUpSubmit.textContent = "Verify Code";
+        verificationStep = true;
+      } else {
+        // Here you would handle the verification logic
+        // For now, just prevent form submission
+        e.preventDefault();
+        alert("Verification logic goes here.");
+      }
     });
   </script>
 </html>
