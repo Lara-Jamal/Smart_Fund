@@ -4,19 +4,16 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import UserProfile from './pages/UserProfile';
 import Form from './pages/Form';
-import { AuthProvider } from './context/AuthContext';
 
 export default function App() {
   return (
-    <AuthProvider>
-      <Router>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/profile" element={<UserProfile />} />
-          <Route path="/form" element={<Form />} />
-        </Routes>
-      </Router>
-    </AuthProvider>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/profile" element={<UserProfile />} />
+        <Route path="/form" element={<Form />} />
+      </Routes>
+    </Router>
   );
 }
