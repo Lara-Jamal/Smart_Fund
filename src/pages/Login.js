@@ -26,7 +26,7 @@ export default function Login() {
 
   return (
     <div>
-      <div className={`container ${isSignUp ? 'right-panel-active' : ''}`} id="container">
+      <div className={`login-container ${isSignUp ? 'right-panel-active' : ''}`} id="container">
         <div className="form-container sign-up-container">
           <form onSubmit={handleSignUp} id="signUpForm">
             <h1>Create Account</h1>
