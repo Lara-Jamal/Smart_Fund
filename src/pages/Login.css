@@ -83,6 +83,7 @@ input {
   width: 100%;
   max-width: 768px;
   min-height: 480px;
+  margin: 0 auto;
 }
 .form-container {
   position: absolute;
