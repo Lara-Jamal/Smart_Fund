@@ -2,7 +2,8 @@
 * {
   box-sizing: border-box;
 }
-body {
+/* Restrict styles to login page only */
+.login-body {
   background: #f6f5f7;
   display: flex;
   justify-content: center;

@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { UserContext } from '../UserContext';
 import './Login.css';
 
@@ -9,6 +9,13 @@ export default function Login() {
   const [signInData, setSignInData] = useState({ email: '', password: '' });
   const [signUpData, setSignUpData] = useState({ name: '', email: '', password: '', code: '' });
   const [verificationStep, setVerificationStep] = useState(false);
+
+  useEffect(() => {
+    document.body.classList.add('login-body');
+    return () => {
+      document.body.classList.remove('login-body');
+    };
+  }, []);
 
   const handleSignIn = (e) => {
     e.preventDefault();
